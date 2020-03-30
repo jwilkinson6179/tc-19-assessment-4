@@ -6,24 +6,27 @@ import java.util.List;
 /**
  * @author leon on 10/12/2018.
  */
-public class Student {
+public class Student
+{
     List<Lab> labs;
 
-    public Student() {
+    public Student()
+    {
         labs = new ArrayList<>();
     }
 
-    public Student(List<Lab> inputLabs) {
+    public Student(List<Lab> inputLabs)
+    {
         labs = new ArrayList<>();
 
-        for (Lab element : inputLabs) {
-            this.labs.add(element);
-        }
+        this.labs.addAll(inputLabs);
     }
 
-    public Lab getLab(String labName) {
+    public Lab getLab(String labName)
+    {
         for (Lab element : labs) {
-            if (element.getName().equals(labName)) {
+            if (element.getName().equals(labName))
+            {
                 return element;
             }
         }
@@ -32,7 +35,8 @@ public class Student {
 
     public void setLabStatus(String labName, LabStatus labStatus)
     {
-        try {
+        try
+        {
             Lab labToChange = getLab(labName);
             labToChange.setStatus(labStatus);
         }
@@ -42,13 +46,17 @@ public class Student {
         }
     }
 
-    public void forkLab(Lab lab) {
+    public void forkLab(Lab lab)
+    {
         labs.add(lab);
     }
 
-    public LabStatus getLabStatus(String labName) {
-        for (Lab element : labs) {
-            if (element.getName().equals(labName)) {
+    public LabStatus getLabStatus(String labName)
+    {
+        for (Lab element : labs)
+        {
+            if (element.getName().equals(labName))
+            {
                 return element.getStatus();
             }
         }

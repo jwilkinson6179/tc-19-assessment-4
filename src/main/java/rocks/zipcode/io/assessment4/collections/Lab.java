@@ -29,7 +29,8 @@ public class Lab
         this.labStatus = labStatus;
     }
 
-    public LabStatus getStatus() {
+    public LabStatus getStatus()
+    {
         return labStatus;
     }
 }
